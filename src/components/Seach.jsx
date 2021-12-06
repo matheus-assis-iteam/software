@@ -3,7 +3,6 @@ import { BiSearch, BiCaretDown, BiCheck } from "react-icons/bi"
 import { useState } from 'react';
 
 const DropDown = ({ toggle }) => {
-  console.log(toggle)
   if(!toggle){
     return null
   }
@@ -33,7 +32,7 @@ const DropDown = ({ toggle }) => {
 
 const Search = () => {
 
-  const [toggleSort, setToggleSort] = useState(true)
+  const [toggleSort, setToggleSort] = useState(false)
 
   return (
     <div className="py-5">
