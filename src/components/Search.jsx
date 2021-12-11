@@ -11,13 +11,13 @@ const DropDown = ({ toggle, sortBy,onSortByChange, orderBy, onOrderByChange }) =
       rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
       <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
         <div
-          onClick={() => onSortByChange('petName')}
+          onClick={() => onSortByChange('pacientName')}
           className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
-          role="menuitem">Pet Name {sortBy === 'petName' && <BiCheck />}</div>
+          role="menuitem">Pet Name {sortBy === 'pacientName' && <BiCheck />}</div>
         <div
-          onClick={() => onSortByChange('ownerName')}
+          onClick={() => onSortByChange('doctorName')}
           className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
-          role="menuitem">Owner Name {sortBy === 'ownerName' && <BiCheck />}</div>
+          role="menuitem">Owner Name {sortBy === 'doctorName' && <BiCheck />}</div>
         <div
           onClick={() => onSortByChange('aptDate')}
           className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"

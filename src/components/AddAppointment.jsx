@@ -3,8 +3,8 @@ import { useState } from "react";
 
 const AddAppointment = ({onSendAppointment, lastId}) => {
   const clearData = {
-    ownerName: '',
-    petName:'',
+    doctorName: '',
+    pacientName:'',
     aptDate: '',
     aptTime: '',
     aptNotes: ''
@@ -15,8 +15,8 @@ const AddAppointment = ({onSendAppointment, lastId}) => {
   const formDataPublish = () => {
     const appointmentInfo = {
     id: lastId + 1,  
-    ownerName: formData.ownerName,
-    petName: formData.petName,
+    doctorName: formData.doctorName,
+    pacientName: formData.pacientName,
     aptDate: formData.aptDate + ' ' + formData.aptTime,
     aptNotes: formData.aptNotes
     }
@@ -33,30 +33,30 @@ const AddAppointment = ({onSendAppointment, lastId}) => {
       { toggleForm &&
         <div className="border-r-2 border-b-2 border-l-2 border-light-blue-500 rounded-b-md pl-4 pr-4 pb-4">
         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start  sm:pt-5">
-          <label htmlFor="ownerName" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-            Owner Name
+          <label htmlFor="doctorName" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+            Pacient Name
           </label>
           <div className="mt-1 sm:mt-0 sm:col-span-2">
-            <input type="text" name="ownerName" id="ownerName"
-            onChange={(event) => {setFormData({...formData, ownerName: event.target.value})}} value={formData.ownerName}
+            <input type="text" name="doctorName" id="doctorName"
+            onChange={(event) => {setFormData({...formData, doctorName: event.target.value})}} value={formData.doctorName}
               className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md" />
           </div>
         </div>
 
         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start  sm:pt-5">
-          <label htmlFor="petName" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-            Pet Name
+          <label htmlFor="pacientName" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+            Doctor Name
           </label>
           <div className="mt-1 sm:mt-0 sm:col-span-2">
-            <input type="text" name="petName" id="petName"
-            onChange={(event) => {setFormData({...formData, petName: event.target.value})}} value={formData.petName}
+            <input type="text" name="pacientName" id="pacientName"
+            onChange={(event) => {setFormData({...formData, pacientName: event.target.value})}} value={formData.pacientName}
               className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md" />
           </div>
         </div>
 
         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start  sm:pt-5">
           <label htmlFor="aptDate" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-            Apt Date
+            Appointment Date
           </label>
           <div className="mt-1 sm:mt-0 sm:col-span-2">
             <input type="date" name="aptDate" id="aptDate"
@@ -67,7 +67,7 @@ const AddAppointment = ({onSendAppointment, lastId}) => {
 
         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start  sm:pt-5">
           <label htmlFor="aptTime" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
-            Apt Time
+            Appointment Time
           </label>
           <div className="mt-1 sm:mt-0 sm:col-span-2">
             <input type="time" name="aptTime" id="aptTime"
@@ -84,7 +84,7 @@ const AddAppointment = ({onSendAppointment, lastId}) => {
             <textarea id="aptNotes" 
             onChange={(event) => {setFormData({...formData, aptNotes: event.target.value})}} value={formData.aptNotes}
             name="aptNotes" rows="3"
-              className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Detailed comments about the condition"></textarea>
+              className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Detailed comments about the appointment"></textarea>
           </div>
         </div>
 

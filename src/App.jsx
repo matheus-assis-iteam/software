@@ -1,5 +1,6 @@
 import { BiCalendar } from "react-icons/bi";
 import AddAppointment from "./components/AddAppointment";
+import Confirm from "./components/Confirm";
 import Search from "./components/Seach";
 import AppointmentInfo from "./components/AppointmentInfo";
 import { useCallback, useEffect, useState } from "react";
@@ -13,8 +14,8 @@ function App() {
   const filteredAppoimentmentList = appointmentList.filter(
     item => {
       return(
-        item.petName.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ||
-        item.ownerName.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ||
+        item.pacientName.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ||
+        item.doctorName.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ||
         item.aptNotes.toLocaleLowerCase().includes(query.toLocaleLowerCase())
       )
     }
@@ -63,7 +64,7 @@ function App() {
             key={appointment.id}
             appointment={appointment}
             onDeleteAppointment={
-              appointmentId =>
+              appointmentId => 
                 setAppointmentList(appointmentList.filter(appointment =>
                   appointment.id !== appointmentId))
             }
