@@ -1,7 +1,6 @@
 import { BiCalendar } from "react-icons/bi";
 import AddAppointment from "./components/AddAppointment";
-import Confirm from "./components/Confirm";
-import Search from "./components/Seach";
+import Search from "./components/Search";
 import AppointmentInfo from "./components/AppointmentInfo";
 import { useCallback, useEffect, useState } from "react";
 
